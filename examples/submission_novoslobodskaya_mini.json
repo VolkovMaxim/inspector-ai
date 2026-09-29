@@ -1,0 +1,186 @@
+{
+    "object_id": "OBJ-NOVOSLOBODSKAYA-MINI",
+    "checks": [
+        {
+            "parameter_code": "KR-055",
+            "location": "Форшахта",
+            "pd_value": "В15",
+            "rd_value": "B15",
+            "id_value": null,
+            "violation_label": "NO_VIOLATION",
+            "protocol_status": "OK",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 13
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 1
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-055",
+            "location": "Стена в грунте",
+            "pd_value": "В25",
+            "rd_value": "B25, F200, W8",
+            "id_value": null,
+            "violation_label": "NO_VIOLATION",
+            "protocol_status": "OK",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 14
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 1
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-055",
+            "location": "Обвязочная балка",
+            "pd_value": "В25",
+            "rd_value": "В25, F200, W8",
+            "id_value": null,
+            "violation_label": "NO_VIOLATION",
+            "protocol_status": "OK",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 14
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 1
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-055",
+            "location": "Сваи",
+            "pd_value": "В25",
+            "rd_value": "В25, F200, W8",
+            "id_value": null,
+            "violation_label": "NO_VIOLATION",
+            "protocol_status": "OK",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 13
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 1
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-057",
+            "location": "Форшахта",
+            "pd_value": "А400",
+            "rd_value": "А240",
+            "id_value": "А240С",
+            "violation_label": "VIOLATION_PRESENT",
+            "protocol_status": "CRITICAL",
+            "criticality": "Критическое (приостановка работ)",
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 13
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 2
+                },
+                {
+                    "stage": "ID",
+                    "file_id": "F0068",
+                    "pdf_page_number": 2
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-057",
+            "location": "Обвязочная балка",
+            "pd_value": "А500C",
+            "rd_value": "А500С",
+            "id_value": null,
+            "violation_label": "NO_VIOLATION",
+            "protocol_status": "OK",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 29
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 14
+                }
+            ]
+        },
+        {
+            "parameter_code": "KR-067",
+            "location": "Обвязочная балка",
+            "pd_value": "56 шт",
+            "rd_value": "3263,1 кг",
+            "id_value": null,
+            "violation_label": "COMPARISON_IMPOSSIBLE",
+            "protocol_status": "COMPARISON_IMPOSSIBLE",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 29
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 14
+                }
+            ]
+        },
+        {
+            "parameter_code": "PZ-009",
+            "location": "Объект в целом",
+            "pd_value": "144,500",
+            "rd_value": "159,95 м",
+            "id_value": null,
+            "violation_label": "COMPARISON_IMPOSSIBLE",
+            "protocol_status": "COMPARISON_IMPOSSIBLE",
+            "criticality": null,
+            "evidence": [
+                {
+                    "stage": "PD",
+                    "file_id": "F0105",
+                    "pdf_page_number": 13
+                },
+                {
+                    "stage": "RD",
+                    "file_id": "F0137",
+                    "pdf_page_number": 1
+                }
+            ]
+        }
+    ]
+}

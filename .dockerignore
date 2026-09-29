@@ -1,0 +1,39 @@
+# Контекст сборки образа — только код сервиса, без данных, секретов и артефактов разработки.
+
+# данные разработки и загруженные пакеты (могут содержать документы организаторов)
+var/
+var_scale/
+import/
+# модель классификатора страниц (~0,9 ГБ) монтируется с хоста, в образ не входит
+models/
+
+# секреты
+.env
+.env.*
+!.env.example
+
+# Python: окружение, кэши, тесты
+.venv/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+tests/
+
+# интерфейс: зависимости и сборка ставятся/делаются внутри образа
+web/node_modules/
+web/dist/
+web/.vite/
+web/coverage/
+web/**/*.tsbuildinfo
+
+# служебное
+.git/
+.serena/
+*.log
+Dockerfile
+.dockerignore
+docker-compose*.yml
+README.md
+docs/

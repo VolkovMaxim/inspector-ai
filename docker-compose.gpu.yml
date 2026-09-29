@@ -1,0 +1,12 @@
+# GPU для worker: классификатор типа страницы считает на видеокарте рядом с vLLM (~3,5 ГБ).
+# Подключается строкой в .env: COMPOSE_FILE=docker-compose.yml:docker-compose.gpu.yml (профили h100 и single).
+# Без этой строки worker работает без GPU (классификатор — на CPU, медленнее; разработка без видеокарты).
+services:
+  worker:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

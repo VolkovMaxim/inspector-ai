@@ -1,0 +1,120 @@
+{
+ "object_id": "OBJ-NOVOSLOBODSKAYA",
+ "checks": [
+  {
+   "parameter_code": "KR-057",
+   "location": "Форшахта",
+   "pd_value": "А400",
+   "rd_value": "А240",
+   "id_value": "А240С",
+   "violation_label": "VIOLATION_PRESENT",
+   "protocol_status": "CRITICAL",
+   "criticality": "Критическое (приостановка работ)",
+   "evidence": [
+    {
+     "stage": "PD",
+     "file_id": "F0105",
+     "pdf_page_number": 13
+    },
+    {
+     "stage": "RD",
+     "file_id": "F0137",
+     "pdf_page_number": 2
+    },
+    {
+     "stage": "ID",
+     "file_id": "F0068",
+     "pdf_page_number": 2
+    }
+   ]
+  },
+  {
+   "parameter_code": "KR-055",
+   "location": "Фундаментная плита",
+   "pd_value": "В30",
+   "rd_value": "В30",
+   "id_value": null,
+   "violation_label": "NO_VIOLATION",
+   "protocol_status": "OK",
+   "criticality": null,
+   "evidence": [
+    {
+     "stage": "PD",
+     "file_id": "F0105",
+     "pdf_page_number": 9
+    },
+    {
+     "stage": "RD",
+     "file_id": "F0137",
+     "pdf_page_number": 3
+    }
+   ]
+  },
+  {
+   "parameter_code": "KR-058",
+   "location": "Ростверк",
+   "pd_value": "600 мм",
+   "rd_value": "900 мм",
+   "id_value": null,
+   "violation_label": "COMPARISON_IMPOSSIBLE",
+   "protocol_status": "COMPARISON_IMPOSSIBLE",
+   "criticality": null,
+   "evidence": [
+    {
+     "stage": "PD",
+     "file_id": "F0105",
+     "pdf_page_number": 11
+    },
+    {
+     "stage": "RD",
+     "file_id": "F0137",
+     "pdf_page_number": 5
+    }
+   ]
+  },
+  {
+   "parameter_code": "KR-059",
+   "location": "Плиты перекрытия надземной части",
+   "pd_value": "220 мм",
+   "rd_value": "200 мм",
+   "id_value": null,
+   "violation_label": "VIOLATION_PRESENT",
+   "protocol_status": "CRITICAL",
+   "criticality": "Критическое (приостановка работ)",
+   "evidence": [
+    {
+     "stage": "PD",
+     "file_id": "F0105",
+     "pdf_page_number": 15
+    },
+    {
+     "stage": "RD",
+     "file_id": "F0137",
+     "pdf_page_number": 7
+    }
+   ]
+  },
+  {
+   "parameter_code": "FREE-AR-EXPLICATION-AREA",
+   "location": "104",
+   "pd_value": "12,4",
+   "rd_value": "13,1",
+   "id_value": null,
+   "violation_label": "VIOLATION_PRESENT",
+   "protocol_status": "WARNING",
+   "criticality": "Существенное (предписание)",
+   "evidence": [
+    {
+     "stage": "PD",
+     "file_id": "F0105",
+     "pdf_page_number": 20
+    },
+    {
+     "stage": "RD",
+     "file_id": "F0137",
+     "pdf_page_number": 4
+    }
+   ]
+  }
+ ]
+}

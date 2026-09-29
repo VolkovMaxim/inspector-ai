@@ -1,0 +1,66 @@
+/*
+ * Токены. Принцип: хром интерфейса — графит на бумаге; цвет означает только статус,
+ * индикатор объекта или рамку доказательства на странице.
+ */
+:root {
+  /* бумага, доска, графит */
+  --paper: #ffffff;
+  --board: #edf0f3;
+  --board-deep: #dde2e7;
+  --ink: #1e2a35;
+  --ink-soft: #33424f;
+  --pencil: #5a6672;
+  --pencil-light: #87919b;
+  --rule: #cdd3d9;
+  --rule-soft: #e4e8ec;
+  --hover: #f4f6f8;
+  --selected: #e9eef4;
+  --focus: #1e2a35;
+
+  /* рамка доказательства на странице — не совпадает ни с одним статусом */
+  --marker: #d1147a;
+  --marker-fill: rgba(209, 20, 122, 0.1);
+
+  /* статусы находок (ТЗ 9.2) */
+  --amber-fg: #7a4f00;
+  --amber-bg: #fff1cc;
+  --amber-line: #d99a0b;
+  --red-fg: #9e1b1f;
+  --red-bg: #fce6e6;
+  --red-line: #cc3036;
+  --red-solid: #b3262b;
+  --green-fg: #1d6337;
+  --green-bg: #e2f2e7;
+  --green-line: #3a9559;
+  --gray-fg: #4d5760;
+  --gray-bg: #eceff2;
+  --gray-line: #a3acb5;
+  --violet-fg: #573597;
+  --violet-bg: #efe9fb;
+  --violet-line: #8766cc;
+  --blue-fg: #1b4c8c;
+  --blue-bg: #e3ecfa;
+  --blue-line: #447ac4;
+
+  /* индикатор объекта */
+  --ind-red: #cc3036;
+  --ind-yellow: #e0a106;
+  --ind-green: #3a9559;
+  --ind-gray: #a3acb5;
+
+  /* шрифты: Golos — интерфейс; PT Mono — только коды, шифры, SHA-256 */
+  --font-ui: 'Golos Text Variable', 'Golos Text', 'PT Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'PT Mono', 'DejaVu Sans Mono', ui-monospace, monospace;
+
+  /* шкала текста (шаг ≈ 1,125) */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-md: 13.5px;
+  --fs-lg: 15px;
+  --fs-xl: 18px;
+  --fs-xxl: 22px;
+
+  --radius: 3px;
+  --topbar-h: 48px;
+  --gutter: 24px;
+}

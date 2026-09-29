@@ -1,0 +1,238 @@
+# «Инспектор ИИ» — развёртывание (Docker Compose ≥ 2.24, NVIDIA Container Toolkit для профилей с GPU).
+#
+#   cp .env.example .env                          # настройки; без .env работают значения по умолчанию
+#   docker compose --profile h100 up -d           # стенд жюри: 1×H100 80 ГБ — одна Qwen3.8 (текст сканов — RapidOCR)
+#   docker compose --profile h100 --profile qwen36-ocr up -d   # + Qwen3.6 для OCR (сравнение; OCR_ENGINE=vlm, OCR_URL)
+#   docker compose --profile single up -d         # одна Qwen3.8 на всё (GPU 32 ГБ)
+#   docker compose up -d                          # без GPU: db + api + worker + backup, модель по LLM_URL из .env
+#
+# Веса моделей заранее: scripts/prefetch_models.sh h100|single (кэш HF хоста монтируется в vLLM целиком).
+# Подробности — README.md и docs/deployment.md.
+
+name: inspector
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "50m"
+    max-file: "5"
+
+# api и worker — один образ, разные команды (собирает его сервис api; worker берёт тот же тег)
+x-inspector: &inspector
+  image: ${INSPECTOR_IMAGE:-inspector:latest}
+  restart: unless-stopped
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    # environment важнее env_file: здесь — то, что в контейнере должно быть иначе, чем в inspector/config.py
+    DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://${POSTGRES_USER:-inspector}:${POSTGRES_PASSWORD:-inspector}@db:5432/${POSTGRES_DB:-inspector}}
+    DATA_DIR: /var/inspector
+    IMPORT_ROOTS: /import
+    LLM_URL: ${LLM_URL:-http://llm:8000/v1}
+    # пусто -> OCR (перечитывание отобранных сканов) идёт в LLM_URL — та же Qwen3.8
+    OCR_URL: ${OCR_URL-}
+    OCR_MODEL: ${OCR_MODEL-}
+    RIN_URL: ${RIN_URL:-http://api:8080/api/v1/mock-rin/receive}
+    WAIT_FOR_MODELS_S: ${WAIT_FOR_MODELS_S:-1800}
+    # классификатор типа страницы: начальная модель — каталог хоста PAGE_CLASSIFIER_HOST_DIR (manifest.json +
+    # predict.py); нет manifest.json — тип страниц даёт только Qwen. Вектор картинки (SigLIP2) — из кэша HF хоста.
+    PAGE_CLASSIFIER_DIR: ${PAGE_CLASSIFIER_DIR-/models/page-cls}
+    HF_HOME: /hf
+    HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-1}
+  volumes:
+    - data:/var/inspector
+    # пакеты для импорта с диска сервера (admin, import-local), только чтение. IMPORT_DIR — каталог хоста;
+    # не задан — пустой том (каталог хоста не создаётся)
+    - ${IMPORT_DIR:-import}:/import:ro
+    - ${PAGE_CLASSIFIER_HOST_DIR:-./models/page-cls}:/models/page-cls:ro
+    - ${HF_HOME:-~/.cache/huggingface}:/hf:ro
+  depends_on:
+    db:
+      condition: service_healthy
+  logging: *logging
+
+# vLLM (OpenAI-совместимый API) — общие настройки сервисов моделей
+x-vllm: &vllm
+  image: ${VLLM_IMAGE:-vllm/vllm-openai:v0.29.0}
+  restart: unless-stopped
+  ipc: host
+  environment:
+    HF_HOME: /root/.cache/huggingface
+    HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-1}
+    VLLM_ENABLE_CUDA_COMPATIBILITY: ${VLLM_ENABLE_CUDA_COMPATIBILITY:-0}
+  volumes:
+    # весь кэш HF: в каталогах моделей — симлинки на общие blobs
+    - ${HF_HOME:-~/.cache/huggingface}:/root/.cache/huggingface
+    # кэш компиляции vLLM (torch.compile): повторный старт быстрее
+    - vllm-cache:/root/.cache/vllm
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+  healthcheck:
+    test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+    interval: 15s
+    timeout: 10s
+    retries: 5
+    start_period: 15m
+  logging: *logging
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-inspector}
+      POSTGRES_USER: ${POSTGRES_USER:-inspector}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-inspector}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    logging: *logging
+
+  api:
+    <<: *inspector
+    build:
+      context: .
+      args:
+        SKIP_WEB: ${SKIP_WEB:-0}
+    command: ["api"]
+    ports:
+      - "${API_BIND:-0.0.0.0}:${API_PORT:-8080}:8080"
+
+  worker:
+    <<: *inspector
+    command: ["worker"]
+    stop_grace_period: 30s
+
+  # резервные копии БД: pg_dump (формат custom — для pg_restore) каждые BACKUP_INTERVAL_MIN минут в отдельный том,
+  # копии старше BACKUP_KEEP_DAYS дней удаляются. Первая копия — сразу при старте. BACKUP_DIR — каталог хоста
+  # (например, сетевой диск); не задан — именованный том backups. Восстановление — docs/operations.md.
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGDATABASE: ${POSTGRES_DB:-inspector}
+      PGUSER: ${POSTGRES_USER:-inspector}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-inspector}
+      BACKUP_INTERVAL_MIN: ${BACKUP_INTERVAL_MIN:-15}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-30}
+    volumes:
+      - ${BACKUP_DIR:-backups}:/backups
+    entrypoint: ["/bin/sh", "-c"]
+    # $$ — буквальный $ для оболочки контейнера (иначе compose подставит переменную при чтении файла)
+    command:
+      - |
+        set -u
+        for v in "$${BACKUP_INTERVAL_MIN}" "$${BACKUP_KEEP_DAYS}"; do
+          # «0*»: ноль и числа с нулём впереди (в арифметике sh они восьмеричные: 08 — ошибка, 010 — 8)
+          case "$$v" in ''|*[!0-9]*|0*) echo "backup: BACKUP_INTERVAL_MIN и BACKUP_KEEP_DAYS — целые > 0 без нулей впереди" >&2; exit 1;; esac
+        done
+        rm -f "/backups/$${PGDATABASE}"_*.part   # свои недописанные копии прошлого запуска (контейнер остановили)
+        echo "backup: каждые $${BACKUP_INTERVAL_MIN} мин, хранение $${BACKUP_KEEP_DAYS} дн., каталог /backups"
+        while :; do
+          name="$${PGDATABASE}_$$(date -u +%Y%m%dT%H%M%SZ).dump"
+          if pg_dump --format=custom --file="/backups/$${name}.part"; then
+            mv "/backups/$${name}.part" "/backups/$${name}"
+            echo "backup: $${name} ($$(du -h "/backups/$${name}" | cut -f1))"
+            # старые копии — только после удачной новой и только свои: пока pg_dump падает, прежние копии остаются,
+            # а в общем каталоге BACKUP_DIR чужие файлы не трогаются
+            find /backups -maxdepth 1 -type f -name "$${PGDATABASE}_*.dump" -mmin +$$((BACKUP_KEEP_DAYS * 1440)) \
+              -print -exec rm -f {} + | sed 's/^/backup: удалена старая копия /'
+          else
+            rm -f "/backups/$${name}.part"
+            echo "backup: ОШИБКА pg_dump — копия не создана" >&2
+          fi
+          sleep $$((BACKUP_INTERVAL_MIN * 60))
+        done
+    depends_on:
+      db:
+        condition: service_healthy
+    logging: *logging
+
+  # --- профиль h100: одна Qwen3.8 FP8 на H100 80 ГБ (класс, извлечение, судья, перечитывание сканов; FP8 Hopper
+  #     считает напрямую, NVFP4 — через Marlin вдвое медленнее); память ограничена абсолютно (GPU может быть
+  #     общей): веса 29 ГБ + KV 16 ГиБ + рабочая память ---
+  llm:
+    <<: *vllm
+    profiles: ["h100"]
+    command:
+      - --model
+      - ${LLM_MODEL_REPO:-Qwen/Qwen3.8-27B-FP8}
+      - --served-model-name
+      - qwen
+      - --max-model-len
+      - "32768"
+      - --gpu-memory-utilization
+      - "${LLM_GPU_UTIL:-0.60}"
+      - --kv-cache-memory-bytes
+      - ${LLM_KV_BYTES:-16G}
+      - --max-num-seqs
+      - "${LLM_MAX_SEQS:-32}"
+      - --limit-mm-per-prompt
+      - '{"image":4,"video":0}'
+
+  # --- профиль qwen36-ocr (необязательный): Qwen3.6 читает все сканы (OCR_ENGINE=vlm, OCR_URL=http://ocr:8000/v1,
+  #     OCR_MODEL=ocr) — сравнение с RapidOCR; с ним на H100 LLM_KV_BYTES=6G, LLM_GPU_UTIL=0.40 ---
+  ocr:
+    <<: *vllm
+    profiles: ["qwen36-ocr"]
+    # после llm: vLLM на старте требует свободными gpu-memory-utilization × объём GPU; одновременный старт
+    # двух движков на одной GPU рискует пиками памяти при прогреве
+    depends_on:
+      llm:
+        condition: service_healthy
+    command:
+      - --model
+      - ${OCR_MODEL_REPO:-Qwen/Qwen3.6-35B-A3B-FP8}
+      - --served-model-name
+      - ocr
+      - --max-model-len
+      - "16384"
+      - --gpu-memory-utilization
+      - "${OCR_GPU_UTIL:-0.52}"
+      - --kv-cache-memory-bytes
+      - ${OCR_KV_BYTES:-8G}
+      - --max-num-seqs
+      - "${OCR_MAX_SEQS:-64}"
+      - --limit-mm-per-prompt
+      - '{"image":1,"video":0}'
+
+  # --- профиль single: одна Qwen3.8 NVFP4 на всё, включая OCR (FP8 в 32 ГБ не помещается). В сети доступна и как llm (LLM_URL тот же, что
+  #     в h100); в .env для single OCR_URL и OCR_MODEL пустые (OCR идёт в LLM_URL) — см. docs/deployment.md, «Профили» ---
+  llm-single:
+    <<: *vllm
+    profiles: ["single"]
+    networks:
+      default:
+        aliases: [llm]
+    command:
+      - --model
+      - ${SINGLE_MODEL_REPO:-unsloth/Qwen3.8-27B-NVFP4}
+      - --served-model-name
+      - qwen
+      - --max-model-len
+      - "32768"
+      - --gpu-memory-utilization
+      - "${SINGLE_GPU_UTIL:-0.92}"
+      - --max-num-seqs
+      - "${LLM_MAX_SEQS:-32}"
+      - --limit-mm-per-prompt
+      - '{"image":4,"video":0}'
+
+volumes:
+  pgdata:
+  data:
+  import:
+  backups:
+  vllm-cache:

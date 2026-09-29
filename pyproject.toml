@@ -1,0 +1,51 @@
+[project]
+name = "inspector"
+version = "0.1.0"
+description = "ИИ-Инспектор: сверка ПД/РД/ИД по матрице 132 параметров (ЛЦТ-2026, задача 10)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "python-multipart>=0.0.9",
+    "pyjwt>=2.8",
+    "bcrypt>=4.1",
+    "httpx>=0.27",
+    "pymupdf>=1.24",
+    "rapidfuzz>=3.9",
+    "reportlab>=4.2",
+    "python-docx>=1.1",
+    "prometheus-client>=0.20",
+    "jsonschema>=4.22",
+    "pillow>=10.3",
+    "scikit-learn>=1.5",
+]
+
+[project.optional-dependencies]
+# onnxruntime-gpu считает и на CPU; CUDA 12 / cuDNN 9 для него — из пакетов nvidia-* (их ставит torch, extra classifier)
+ocrbox = ["rapidocr>=3.4", "onnxruntime-gpu==1.23.2; sys_platform == 'linux'", "onnxruntime>=1.18; sys_platform != 'linux'"]
+dev = ["pytest>=8.2", "pytest-asyncio>=0.23"]
+# классификатор типа страницы (PAGE_CLASSIFIER_DIR): torch под CUDA 12.8 + transformers, как у модели ночи 28–29.09
+classifier = ["torch==2.11.*", "transformers==5.17.*"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128", extra = "classifier" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["inspector"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

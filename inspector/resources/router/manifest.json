@@ -1,0 +1,108 @@
+{
+ "name": "page-router-f40",
+ "trained_on": {
+  "altuf": "work/expert_altuf/expert_altuf.jsonl",
+  "tyum": "work/expert_tyum/expert_tyum.jsonl",
+  "novoslob": "work/expert_novoslob/expert_novoslob.jsonl"
+ },
+ "n_pages": 12274,
+ "n_models": 124,
+ "keep_per_param": 20000,
+ "settings": {
+  "C": 4.0,
+  "min_pos": 3,
+  "max_features": 300000,
+  "text_chars": 20000,
+  "meta_weight": 2.0,
+  "rrf_k": 60,
+  "base_k": 40
+ },
+ "labels": "значения эталонов агентов Claude по всем страницам (не люди)",
+ "check_leave_one_object_out": {
+  "altuf": {
+   "full": {
+    "coverage": 0.975,
+    "hit": 157,
+    "pairs": 161
+   },
+   "seconds_fit": 399.9,
+   "keep_5000": {
+    "coverage": 0.975,
+    "hit": 157,
+    "gained": 0,
+    "lost": 0
+   },
+   "keep_20000": {
+    "coverage": 0.975,
+    "hit": 157,
+    "gained": 0,
+    "lost": 0
+   },
+   "keep_50000": {
+    "coverage": 0.975,
+    "hit": 157,
+    "gained": 0,
+    "lost": 0
+   }
+  },
+  "tyum": {
+   "full": {
+    "coverage": 0.917,
+    "hit": 143,
+    "pairs": 156
+   },
+   "seconds_fit": 106.5,
+   "keep_5000": {
+    "coverage": 0.917,
+    "hit": 143,
+    "gained": 0,
+    "lost": 0
+   },
+   "keep_20000": {
+    "coverage": 0.917,
+    "hit": 143,
+    "gained": 0,
+    "lost": 0
+   },
+   "keep_50000": {
+    "coverage": 0.917,
+    "hit": 143,
+    "gained": 0,
+    "lost": 0
+   }
+  },
+  "novoslob": {
+   "full": {
+    "coverage": 0.945,
+    "hit": 138,
+    "pairs": 146
+   },
+   "seconds_fit": 199.5,
+   "keep_5000": {
+    "coverage": 0.932,
+    "hit": 136,
+    "gained": 0,
+    "lost": 2
+   },
+   "keep_20000": {
+    "coverage": 0.945,
+    "hit": 138,
+    "gained": 0,
+    "lost": 0
+   },
+   "keep_50000": {
+    "coverage": 0.945,
+    "hit": 138,
+    "gained": 0,
+    "lost": 0
+   }
+  }
+ },
+ "fit_seconds": 297.1,
+ "version": "router@b6c996c9",
+ "files": {
+  "vocab.json": "daa2ccec90199f6149e488cd705a8f9d801131f98df83c33c9d7e83810b9e38c",
+  "idf.npz": "f1ee3aa03817e9ac7872fa64d811da8b64b344286bc6fb0637d8be3a85c4fc26",
+  "coef.npz": "b6c996c9a0362f6e255b881e8e59a79eb2ac52c5115ea0cd2d65b522e2c0aade"
+ }
+}

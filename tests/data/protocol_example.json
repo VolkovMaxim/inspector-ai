@@ -1,0 +1,1727 @@
+{
+ "protocol_id": "PRT-cf976387-v1",
+ "process_id": "cf976387-4bc6-4683-bc43-c2ef976f3ff6",
+ "version": 1,
+ "process_status": "READY",
+ "generated_at": "2026-09-24T21:36:00.203303+00:00",
+ "object": {
+  "object_id": "OBJ-NOVOSLOBODSKAYA",
+  "name": "Жилой дом, Новослободская",
+  "address": "г. Москва, ул. Новослободская",
+  "customer": "ООО «Заказчик»",
+  "contractor": "ООО «Подрядчик»",
+  "permit_number": "77-000000-000000-2025"
+ },
+ "traceability": {
+  "process_id": "cf976387-4bc6-4683-bc43-c2ef976f3ff6",
+  "matrix_version": "matrix-132-r1.1",
+  "dataset_version": "none",
+  "model_version": "llm=qwen;ocr=qwen;bbox=rapidocr-ppocrv5-mobile;classify=pc1r;extract=g2;judge=j1;verify=v1;ocr=plain1",
+  "run_timestamp": "2026-09-24T21:36:00.190612+00:00",
+  "input_manifest_sha256": "07c44ecf9dd0b3f77b3afdbf43a543bb39cb603a9b72c79aeccee462eb43ebeb"
+ },
+ "scenario": "FULL",
+ "upload_status": [
+  {
+   "stage": "PD",
+   "status": "PD_UPLOADED",
+   "files": 1,
+   "problem_files": 0,
+   "pages": 29,
+   "ocr_pages": 0,
+   "comment": "Все файлы читаются"
+  },
+  {
+   "stage": "RD",
+   "status": "RD_UPLOADED",
+   "files": 1,
+   "problem_files": 0,
+   "pages": 14,
+   "ocr_pages": 0,
+   "comment": "Все файлы читаются"
+  },
+  {
+   "stage": "ID",
+   "status": "ID_PARTIAL",
+   "files": 1,
+   "problem_files": 1,
+   "pages": 10,
+   "ocr_pages": 10,
+   "comment": "Не читаются: broken.pdf (broken)"
+  }
+ ],
+ "summary": {
+  "params_total": 132,
+  "compared": 3,
+  "CONFIRMED_VIOLATION": 0,
+  "CANDIDATE": 2,
+  "CLARIFICATION_REQUIRED": 0,
+  "NOT_COMPARABLE": 1,
+  "NEGATIVE_VERIFIED": 1,
+  "MISSING_EVIDENCE": 127,
+  "NOT_APPLICABLE": 1,
+  "SUSPICION": 1
+ },
+ "findings_summary": {
+  "CANDIDATE": 2,
+  "NEGATIVE_VERIFIED": 1,
+  "NOT_COMPARABLE": 1,
+  "SUSPICION": 1
+ },
+ "params": [
+  {
+   "code": "PZ-001",
+   "section": "ПЗ",
+   "name": "Площадь застройки",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-002",
+   "section": "ПЗ",
+   "name": "Общая площадь здания",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-003",
+   "section": "ПЗ",
+   "name": "Полезная / Расчетная площадь",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-004",
+   "section": "ПЗ",
+   "name": "Строительный объем (Общий)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-005",
+   "section": "ПЗ",
+   "name": "Строительный объем (Подземный)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-006",
+   "section": "ПЗ",
+   "name": "Строительный объем (Надземный)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-007",
+   "section": "ПЗ",
+   "name": "Этажность (надземная)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-008",
+   "section": "ПЗ",
+   "name": "Высота здания",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-009",
+   "section": "ПЗ",
+   "name": "Абсолютная отметка 0.000",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Значение ПД не найдено в документах объекта",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-010",
+   "section": "ПЗ",
+   "name": "Количество квартир",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-011",
+   "section": "ПЗ",
+   "name": "Квартирография",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-012",
+   "section": "ПЗ",
+   "name": "Количество машино-мест (подземных)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-013",
+   "section": "ПЗ",
+   "name": "Технологическая мощность / Вместимость",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-014",
+   "section": "ПЗ",
+   "name": "Расчетная электрическая мощность",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-015",
+   "section": "ПЗ",
+   "name": "Категория надежности электроснабжения",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-016",
+   "section": "ПЗ",
+   "name": "Суточный расход водопотребления",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-017",
+   "section": "ПЗ",
+   "name": "Суммарная тепловая нагрузка",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-018",
+   "section": "ПЗ",
+   "name": "Максимальный часовой расход газа",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-019",
+   "section": "ПЗ",
+   "name": "Коэффициент застройки (КЗ)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-020",
+   "section": "ПЗ",
+   "name": "Коэффициент использования территории (КИТ)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-021",
+   "section": "ПЗ",
+   "name": "Класс энергетической эффективности",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-022",
+   "section": "ПЗ",
+   "name": "Степень огнестойкости здания",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PZ-023",
+   "section": "ПЗ",
+   "name": "Класс конструктивной пожарной опасности",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-024",
+   "section": "СПЗУ",
+   "name": "Объем грунта (выемка/насыпь)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-025",
+   "section": "СПЗУ",
+   "name": "Площадь асфальтобетонного покрытия",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-026",
+   "section": "СПЗУ",
+   "name": "Площадь тротуарного плиточного покрытия",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-027",
+   "section": "СПЗУ",
+   "name": "Площадь озеленения и газонов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-028",
+   "section": "СПЗУ",
+   "name": "Площадь детских и спортивных площадок",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-029",
+   "section": "СПЗУ",
+   "name": "Спецификация МАФ",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-030",
+   "section": "СПЗУ",
+   "name": "Ширина внутриплощадочных дорог и проездов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-031",
+   "section": "СПЗУ",
+   "name": "Радиусы поворота дорог и пожарных проездов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-032",
+   "section": "СПЗУ",
+   "name": "Конструкция дорожной одежды",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-033",
+   "section": "СПЗУ",
+   "name": "Уклоны дорог и проездов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-034",
+   "section": "СПЗУ",
+   "name": "Точки и координаты подключения внешних сетей",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-035",
+   "section": "СПЗУ",
+   "name": "Охранные зоны существующих коммуникаций",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-036",
+   "section": "СПЗУ",
+   "name": "Тип и высотные параметры ограждения территории",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-037",
+   "section": "СПЗУ",
+   "name": "Количество и разметка парковочных мест на участке",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-038",
+   "section": "СПЗУ",
+   "name": "Количество парковочных мест для МГН на участке",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SPZU-039",
+   "section": "СПЗУ",
+   "name": "Мероприятия по инженерной подготовке (дренажи)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-040",
+   "section": "АР",
+   "name": "Ширина магистральных эвакуационных коридоров",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-041",
+   "section": "АР",
+   "name": "Ширина эвакуационных выходов (дверей)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-042",
+   "section": "АР",
+   "name": "Высота путей эвакуации и проемов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-043",
+   "section": "АР",
+   "name": "Направление открывания эвакуационных дверей",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-044",
+   "section": "АР",
+   "name": "Послойный состав пирога кровли",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-045",
+   "section": "АР",
+   "name": "Уклоны кровли и система водостока",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-046",
+   "section": "АР",
+   "name": "Общее количество и габариты оконных блоков",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-047",
+   "section": "АР",
+   "name": "Габариты и глубина тамбуров входных групп",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-048",
+   "section": "АР",
+   "name": "Количество и параметры лестничных маршей и ступеней",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-049",
+   "section": "АР",
+   "name": "Высота и тип ограждений лестниц, балкона, кровли",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-050",
+   "section": "АР",
+   "name": "Спецификация и типы внутренней отделки помещений",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-051",
+   "section": "АР",
+   "name": "Параметры естественного освещения (КЕО)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-052",
+   "section": "АР",
+   "name": "Цветовое решение и материалы облицовки фасадов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "AR-053",
+   "section": "АР",
+   "name": "Конструктивные мероприятия по защите от шума",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-054",
+   "section": "КР",
+   "name": "Шаг и привязка координационных осей несущего каркаса",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-055",
+   "section": "КР",
+   "name": "Класс прочности бетона монолитных конструкций",
+   "status": "NEGATIVE_VERIFIED",
+   "comment": "",
+   "finding_ids": [
+    "FND-KR-055-Фундаментная плита"
+   ]
+  },
+  {
+   "code": "KR-056",
+   "section": "КР",
+   "name": "Марка стали и класс прочности металлопроката",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-057",
+   "section": "КР",
+   "name": "Марка и класс прочности рабочей арматуры",
+   "status": "CANDIDATE",
+   "comment": "",
+   "finding_ids": [
+    "FND-KR-057-Форшахта"
+   ]
+  },
+  {
+   "code": "KR-058",
+   "section": "КР",
+   "name": "Толщина монолитной фундаментной плиты / ростверка",
+   "status": "NOT_COMPARABLE",
+   "comment": "",
+   "finding_ids": [
+    "FND-KR-058-Ростверк"
+   ]
+  },
+  {
+   "code": "KR-059",
+   "section": "КР",
+   "name": "Толщина монолитных плит перекрытий и покрытия",
+   "status": "CANDIDATE",
+   "comment": "",
+   "finding_ids": [
+    "FND-KR-059-Плиты перекрытия надземной части"
+   ]
+  },
+  {
+   "code": "KR-060",
+   "section": "КР",
+   "name": "Геометрические сечения несущих колонн и пилонов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-061",
+   "section": "КР",
+   "name": "Толщина несущих монолитных стен (ядра жесткости)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-062",
+   "section": "КР",
+   "name": "Диаметр продольной (рабочей) арматуры в колоннах/пилонах",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-063",
+   "section": "КР",
+   "name": "Наличие и конструктивное исполнение деформационных швов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-064",
+   "section": "КР",
+   "name": "Привязки и габариты лифтовых шахт",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-065",
+   "section": "КР",
+   "name": "Схемы расположения и площади технологических проемов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-066",
+   "section": "КР",
+   "name": "Антикоррозионная и огнезащитная обработка конструкций",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "KR-067",
+   "section": "КР",
+   "name": "Ведомости расхода материалов (бетон, сталь)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS1-068",
+   "section": "ИОС1",
+   "name": "Номинальная аппаратная защита ВРУ/ГРЩ",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS1-069",
+   "section": "ИОС1",
+   "name": "Сечение жил и маркировка распределительных кабелей",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS1-070",
+   "section": "ИОС1",
+   "name": "Параметры и контуры заземления и молниезащиты",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS2-071",
+   "section": "ИОС2",
+   "name": "Диаметры стояков и разводящих трубопроводов В1/Т3",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS2-072",
+   "section": "ИОС2",
+   "name": "Материал и класс давления напорных труб В1/Т3",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS2-073",
+   "section": "ИОС2",
+   "name": "Характеристики насосных станций хоз-питьевого водоснабжения",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS3-074",
+   "section": "ИОС3",
+   "name": "Диаметры выпусков и магистралей К1/К2",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS3-075",
+   "section": "ИОС3",
+   "name": "Материал и тип канализационных труб и фасонных частей",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS4-076",
+   "section": "ИОС4",
+   "name": "Диаметры магистралей и стояков отопления (Т1, Т2)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS4-077",
+   "section": "ИОС4",
+   "name": "Технические параметры отопительных приборов (радиаторов)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS4-078",
+   "section": "ИОС4",
+   "name": "Сечения и геометрия воздуховодов общеобменной вентиляции",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS4-079",
+   "section": "ИОС4",
+   "name": "Характеристики вентиляторов общеобменной вентиляции",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "IOS5-080",
+   "section": "ИОС5",
+   "name": "Состав и емкость систем пожарной сигнализации (АПС)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-081",
+   "section": "ПОС",
+   "name": "Границы опасных зон работы грузоподъемных кранов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-082",
+   "section": "ПОС",
+   "name": "Продолжительность этапов строительства (Календарный график)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-083",
+   "section": "ПОС",
+   "name": "Посадка и габариты временных зданий и сооружений",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-084",
+   "section": "ПОС",
+   "name": "Схемы движения и ширина временных автодорог",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-085",
+   "section": "ПОС",
+   "name": "Места размещения площадок складирования материалов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-086",
+   "section": "ПОС",
+   "name": "Потребность в кадрах (Максимальная численность)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-087",
+   "section": "ПОС",
+   "name": "Технологическая последовательность возведения",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-088",
+   "section": "ПОС",
+   "name": "Точки подключения и мощности временных ресурсов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POS-089",
+   "section": "ПОС",
+   "name": "Расположение пунктов мойки колес и выездов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-090",
+   "section": "ПОД",
+   "name": "Границы опасных зон развала и обрушения конструкций",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-091",
+   "section": "ПОД",
+   "name": "Методы и технологическая последовательность демонтажа",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-092",
+   "section": "ПОД",
+   "name": "Мероприятия по защите действующих коммуникаций",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-093",
+   "section": "ПОД",
+   "name": "Общие объемы демонтируемых конструкций (по типам)",
+   "status": "NOT_APPLICABLE",
+   "comment": "Раздел ПОД отсутствует в документации объекта — параметр неприменим",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-094",
+   "section": "ПОД",
+   "name": "Масса и класс опасности образующихся отходов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-095",
+   "section": "ПОД",
+   "name": "Мероприятия по пылеподавлению и снижению шума",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-096",
+   "section": "ПОД",
+   "name": "Узлы временного расчленения сохраняемых конструкций",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "POD-097",
+   "section": "ПОД",
+   "name": "Места и габариты площадок временного складирования лома",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "OOS-098",
+   "section": "ООС",
+   "name": "Регистрация лимитов в АИС \"ОСИГ\"",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "OOS-099",
+   "section": "ООС",
+   "name": "Верфикация транспортных средств (ГЛОНАСС)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "OOS-100",
+   "section": "ООС",
+   "name": "Фиксация рейсов через мобильный КПТС",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "OOS-101",
+   "section": "ООС",
+   "name": "Сверка легитимности полной утилизации",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-102",
+   "section": "ППМ",
+   "name": "Деление здания на пожарные отсеки",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-103",
+   "section": "ППМ",
+   "name": "Пределы огнестойкости противопожарных дверей и ворот (EI)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-104",
+   "section": "ППМ",
+   "name": "Ширина и высота эвакуационных проходов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-105",
+   "section": "ППМ",
+   "name": "Ширина эвакуационных дверей наружных выходов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-106",
+   "section": "ППМ",
+   "name": "Направление открывания дверей на путях эвакуации",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-107",
+   "section": "ППМ",
+   "name": "Класс пожарной опасности отделочных материалов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-108",
+   "section": "ППМ",
+   "name": "Количество и расстановка извещателей АПС",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-109",
+   "section": "ППМ",
+   "name": "Пожарная маркировка кабелей систем ПЗ (СПЗ)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-110",
+   "section": "ППМ",
+   "name": "Количество и расстановка оповещателей СОУЭ",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-111",
+   "section": "ППМ",
+   "name": "Расположение и пределы огнестойкости клапанов (ОЗК)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-112",
+   "section": "ППМ",
+   "name": "Производительность вентиляторов ДУ и подпора воздуха",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-113",
+   "section": "ППМ",
+   "name": "Расход воды и количество струй внутреннего пожаротушения (ВПВ)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "PPM-114",
+   "section": "ППМ",
+   "name": "Расход воды на наружное пожаротушение (НПВ)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-115",
+   "section": "ОДИ",
+   "name": "Технические параметры и наличие инвалидных подъемников",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-116",
+   "section": "ОДИ",
+   "name": "Ширина коридоров на путях движения МГН",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-117",
+   "section": "ОДИ",
+   "name": "Ширина дверных проемов на путях движения МГН",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-118",
+   "section": "ОДИ",
+   "name": "Высота порогов в дверных проемах на путях МГН",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-119",
+   "section": "ОДИ",
+   "name": "Габариты и планировка санузлов для инвалидов (универсальные кабины)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-120",
+   "section": "ОДИ",
+   "name": "Спецификация опорных стационарных и откидных поручней",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-121",
+   "section": "ОДИ",
+   "name": "Количество и габариты парковочных мест для инвалидов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-122",
+   "section": "ОДИ",
+   "name": "Наличие и расстановка тактильно-контрастных указателей",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ODI-123",
+   "section": "ОДИ",
+   "name": "Состав систем двухсторонней связи и вызова помощника",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-124",
+   "section": "ЗУ",
+   "name": "Класс энергетической эффективности здания",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-125",
+   "section": "ЗУ",
+   "name": "Толщина теплоизоляционного слоя наружных стен",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-126",
+   "section": "ЗУ",
+   "name": "Коэффициент теплопроводности (λ) утеплителя стен",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-127",
+   "section": "ЗУ",
+   "name": "Коэффициент сопротивления теплопередаче окон (Ro)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-128",
+   "section": "ЗУ",
+   "name": "Толщина утеплителя чердачных перекрытий / кровли",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-129",
+   "section": "ЗУ",
+   "name": "Наличие приборов учета расхода энергоресурсов",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-130",
+   "section": "ЗУ",
+   "name": "Установка энергосберегающего осветительного оборудования",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "ZU-131",
+   "section": "ЗУ",
+   "name": "Удельный годовой расход тепловой энергии на отопление",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  },
+  {
+   "code": "SM-132",
+   "section": "СМ",
+   "name": "Итоговая стоимость по Сводному сметному расчету (ССР)",
+   "status": "MISSING_EVIDENCE",
+   "comment": "Параметр не обработан",
+   "finding_ids": []
+  }
+ ],
+ "findings": [
+  {
+   "id": 1,
+   "finding_id": "FND-KR-057-Форшахта",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "KR-057",
+   "rule_version": "matrix-132-r1.1",
+   "section": "КР",
+   "parameter_name": "Марка и класс прочности рабочей арматуры",
+   "location": "Форшахта",
+   "expected_value": "А400",
+   "actual_values": {
+    "RD": "А240",
+    "ID": "А240С"
+   },
+   "delta": "понижение класса: А400 → А240",
+   "status": "CANDIDATE",
+   "machine_status": "CANDIDATE",
+   "finding_status": "CANDIDATE",
+   "completeness_status": "COMPLETE",
+   "review_priority": "HIGH",
+   "criticality": "Критическое (приостановка работ)",
+   "rationale": "ПД: арматура форшахты А400; РД и АОСР: А240 — понижение класса арматуры, триггер выполнен.",
+   "verification": {
+    "same_entity": "YES",
+    "trigger_met": "YES",
+    "analysis": "Одна и та же конструкция — форшахта."
+   },
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [
+    {
+     "role": "expected",
+     "stage": "PD",
+     "file_pk": 1,
+     "file_id": "F0105",
+     "file_name": "НВС-2025.03-4.1-КР1.pdf",
+     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "document_code": "НВС-2025.03-4.1-КР1",
+     "revision": "0",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 13,
+     "bbox": [
+      0.412,
+      0.518,
+      0.468,
+      0.534
+     ],
+     "bbox_source": "layer",
+     "value": "А400",
+     "snippet": "Арматура форшахты класса А400"
+    },
+    {
+     "role": "actual_rd",
+     "stage": "RD",
+     "file_pk": 2,
+     "file_id": "F0137",
+     "file_name": "2025-12-23 Новослободская _СВГ (1).pdf",
+     "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "document_code": "НВС-2025.03-КЖ.СВГ",
+     "revision": "1",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 2,
+     "bbox": [
+      0.61,
+      0.33,
+      0.66,
+      0.35
+     ],
+     "bbox_source": "layer",
+     "value": "А240",
+     "snippet": "Ø12 А240 шаг 200"
+    },
+    {
+     "role": "actual_id",
+     "stage": "ID",
+     "file_pk": 3,
+     "file_id": "F0068",
+     "file_name": "АОСР №1АФ от 11.02.2026.pdf",
+     "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+     "document_code": null,
+     "revision": null,
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 2,
+     "bbox": [
+      0.2,
+      0.44,
+      0.27,
+      0.46
+     ],
+     "bbox_source": "layer",
+     "value": "А240С",
+     "snippet": "арматура класса А240С"
+    }
+   ],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": "VIOLATION_PRESENT",
+    "protocol_status": "CRITICAL",
+    "include": true
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 2,
+   "finding_id": "FND-KR-055-Фундаментная плита",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "KR-055",
+   "rule_version": "matrix-132-r1.1",
+   "section": "КР",
+   "parameter_name": "Класс прочности бетона монолитных конструкций",
+   "location": "Фундаментная плита",
+   "expected_value": "В30",
+   "actual_values": {
+    "RD": "В30"
+   },
+   "delta": null,
+   "status": "NEGATIVE_VERIFIED",
+   "machine_status": "NEGATIVE_VERIFIED",
+   "finding_status": "NEGATIVE_VERIFIED",
+   "completeness_status": "COMPLETE",
+   "review_priority": "HIGH",
+   "criticality": "Критическое (приостановка работ)",
+   "rationale": "Класс бетона фундаментной плиты совпадает: В30 = В30.",
+   "verification": null,
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [
+    {
+     "role": "expected",
+     "stage": "PD",
+     "file_pk": 1,
+     "file_id": "F0105",
+     "file_name": "НВС-2025.03-4.1-КР1.pdf",
+     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "document_code": "НВС-2025.03-4.1-КР1",
+     "revision": "0",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 9,
+     "bbox": [
+      0.1,
+      0.2,
+      0.3,
+      0.22
+     ],
+     "bbox_source": "layer",
+     "value": "В30",
+     "snippet": "бетон класса В30 W8 F150"
+    },
+    {
+     "role": "actual_rd",
+     "stage": "RD",
+     "file_pk": 2,
+     "file_id": "F0137",
+     "file_name": "2025-12-23 Новослободская _СВГ (1).pdf",
+     "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "document_code": "НВС-2025.03-КЖ.СВГ",
+     "revision": "1",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 3,
+     "bbox": null,
+     "bbox_source": "page",
+     "value": "В30",
+     "snippet": "Бетон В30"
+    }
+   ],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": "NO_VIOLATION",
+    "protocol_status": "OK",
+    "include": true
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 3,
+   "finding_id": "FND-KR-058-Ростверк",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "KR-058",
+   "rule_version": "matrix-132-r1.1",
+   "section": "КР",
+   "parameter_name": "Толщина монолитной фундаментной плиты / ростверка",
+   "location": "Ростверк",
+   "expected_value": "600 мм",
+   "actual_values": {
+    "RD": "900 мм"
+   },
+   "delta": null,
+   "status": "NOT_COMPARABLE",
+   "machine_status": "NOT_COMPARABLE",
+   "finding_status": null,
+   "completeness_status": "NOT_COMPARABLE",
+   "review_priority": "HIGH",
+   "criticality": "Критическое (приостановка работ)",
+   "rationale": "Значения относятся к разным корпусам — сопоставить нельзя.",
+   "verification": {
+    "same_entity": "NO",
+    "trigger_met": "UNSURE",
+    "analysis": "Разные корпуса"
+   },
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [
+    {
+     "role": "expected",
+     "stage": "PD",
+     "file_pk": 1,
+     "file_id": "F0105",
+     "file_name": "НВС-2025.03-4.1-КР1.pdf",
+     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "document_code": "НВС-2025.03-4.1-КР1",
+     "revision": "0",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 11,
+     "bbox": null,
+     "bbox_source": "page",
+     "value": "600 мм",
+     "snippet": "толщина ростверка 600 мм"
+    },
+    {
+     "role": "actual_rd",
+     "stage": "RD",
+     "file_pk": 2,
+     "file_id": "F0137",
+     "file_name": "2025-12-23 Новослободская _СВГ (1).pdf",
+     "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "document_code": "НВС-2025.03-КЖ.СВГ",
+     "revision": "1",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 5,
+     "bbox": null,
+     "bbox_source": "page",
+     "value": "900 мм",
+     "snippet": "ростверк h=900"
+    }
+   ],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": "COMPARISON_IMPOSSIBLE",
+    "protocol_status": "COMPARISON_IMPOSSIBLE",
+    "include": true
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 4,
+   "finding_id": "FND-KR-059-Плиты перекрытия надземной части",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "KR-059",
+   "rule_version": "matrix-132-r1.1",
+   "section": "КР",
+   "parameter_name": "Толщина монолитных плит перекрытий и покрытия",
+   "location": "Плиты перекрытия надземной части",
+   "expected_value": "220 мм",
+   "actual_values": {
+    "RD": "200 мм"
+   },
+   "delta": "−20 мм",
+   "status": "CANDIDATE",
+   "machine_status": "CANDIDATE",
+   "finding_status": "CANDIDATE",
+   "completeness_status": "COMPLETE",
+   "review_priority": "HIGH",
+   "criticality": "Критическое (приостановка работ)",
+   "rationale": "Толщина плит перекрытия уменьшена: 220 → 200 мм.",
+   "verification": {
+    "same_entity": "YES",
+    "trigger_met": "YES",
+    "analysis": "Одни и те же плиты"
+   },
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [
+    {
+     "role": "expected",
+     "stage": "PD",
+     "file_pk": 1,
+     "file_id": "F0105",
+     "file_name": "НВС-2025.03-4.1-КР1.pdf",
+     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "document_code": "НВС-2025.03-4.1-КР1",
+     "revision": "0",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 15,
+     "bbox": [
+      0.3,
+      0.6,
+      0.36,
+      0.62
+     ],
+     "bbox_source": "layer",
+     "value": "220 мм",
+     "snippet": "толщина плит перекрытий 220 мм"
+    },
+    {
+     "role": "actual_rd",
+     "stage": "RD",
+     "file_pk": 2,
+     "file_id": "F0137",
+     "file_name": "2025-12-23 Новослободская _СВГ (1).pdf",
+     "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "document_code": "НВС-2025.03-КЖ.СВГ",
+     "revision": "1",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 7,
+     "bbox": [
+      0.5,
+      0.1,
+      0.55,
+      0.12
+     ],
+     "bbox_source": "layer",
+     "value": "200 мм",
+     "snippet": "Плита П1 δ=200"
+    }
+   ],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": "VIOLATION_PRESENT",
+    "protocol_status": "CRITICAL",
+    "include": true
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 5,
+   "finding_id": "FND-PZ-009-param",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "PZ-009",
+   "rule_version": "matrix-132-r1.1",
+   "section": "ПЗ",
+   "parameter_name": "Абсолютная отметка 0.000",
+   "location": "",
+   "expected_value": null,
+   "actual_values": {},
+   "delta": null,
+   "status": "MISSING_EVIDENCE",
+   "machine_status": "MISSING_EVIDENCE",
+   "finding_status": null,
+   "completeness_status": "MISSING_EVIDENCE",
+   "review_priority": "HIGH",
+   "criticality": "Критическое (приостановка работ)",
+   "rationale": "Значение ПД не найдено в документах объекта",
+   "verification": null,
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": null,
+    "protocol_status": null,
+    "include": false
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 6,
+   "finding_id": "FND-POD-093-param",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "matrix",
+   "code": "POD-093",
+   "rule_version": "matrix-132-r1.1",
+   "section": "ПОД",
+   "parameter_name": "Общие объемы демонтируемых конструкций (по типам)",
+   "location": "",
+   "expected_value": null,
+   "actual_values": {},
+   "delta": null,
+   "status": "NOT_APPLICABLE",
+   "machine_status": "NOT_APPLICABLE",
+   "finding_status": null,
+   "completeness_status": "NOT_APPLICABLE",
+   "review_priority": "MEDIUM",
+   "criticality": "Существенное (предписание)",
+   "rationale": "Раздел ПОД отсутствует в документации объекта — параметр неприменим",
+   "verification": null,
+   "discovery_method": null,
+   "approved_change_ref": "NONE",
+   "sources": [],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": null,
+    "protocol_status": null,
+    "include": false
+   },
+   "created_in_version": 1
+  },
+  {
+   "id": 7,
+   "finding_id": "FND-FREE-AR-EXPLICATION-AREA-104",
+   "object_id": "OBJ-NOVOSLOBODSKAYA",
+   "source": "explication",
+   "code": "FREE-AR-EXPLICATION-AREA",
+   "rule_version": "freesearch-explication-v1",
+   "section": "АР",
+   "parameter_name": "Площадь помещения по экспликации",
+   "location": "104",
+   "expected_value": "12,4",
+   "actual_values": {
+    "RD": "13,1"
+   },
+   "delta": null,
+   "status": "SUSPICION",
+   "machine_status": "SUSPICION",
+   "finding_status": "SUSPICION",
+   "completeness_status": "COMPLETE",
+   "review_priority": "MEDIUM",
+   "criticality": "Существенное (предписание)",
+   "rationale": "Экспликация помещений: AREA_CHANGED, Δ=0.7 м²",
+   "verification": null,
+   "discovery_method": "SEMANTIC_DISSONANCE",
+   "approved_change_ref": "NONE",
+   "sources": [
+    {
+     "role": "expected",
+     "stage": "PD",
+     "file_pk": 1,
+     "file_id": "F0105",
+     "file_name": "НВС-2025.03-4.1-КР1.pdf",
+     "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+     "document_code": "НВС-2025.03-4.1-КР1",
+     "revision": "0",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 20,
+     "bbox": null,
+     "bbox_source": "page",
+     "value": "12,4",
+     "snippet": null
+    },
+    {
+     "role": "actual_rd",
+     "stage": "RD",
+     "file_pk": 2,
+     "file_id": "F0137",
+     "file_name": "2025-12-23 Новослободская _СВГ (1).pdf",
+     "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+     "document_code": "НВС-2025.03-КЖ.СВГ",
+     "revision": "1",
+     "approval_status": "UNKNOWN",
+     "sheet": null,
+     "page": 4,
+     "bbox": null,
+     "bbox_source": "page",
+     "value": "13,1",
+     "snippet": null
+    }
+   ],
+   "inspector": {
+    "status": "PENDING",
+    "user": null,
+    "decided_at": null,
+    "reason_code": null,
+    "comment": null
+   },
+   "submission": {
+    "violation_label": "VIOLATION_PRESENT",
+    "protocol_status": "WARNING",
+    "include": true
+   },
+   "created_in_version": 1
+  }
+ ],
+ "files": [
+  {
+   "file_pk": 1,
+   "file_id": "F0105",
+   "name": "НВС-2025.03-4.1-КР1.pdf",
+   "rel_path": "",
+   "stage": "PD",
+   "stage_source": "declared",
+   "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "pages": 29,
+   "ocr_pages": 0,
+   "status": "ok",
+   "error": null,
+   "document_code": "НВС-2025.03-4.1-КР1",
+   "revision": "0",
+   "approval_status": null,
+   "discipline": "КР"
+  },
+  {
+   "file_pk": 2,
+   "file_id": "F0137",
+   "name": "2025-12-23 Новослободская _СВГ (1).pdf",
+   "rel_path": "",
+   "stage": "RD",
+   "stage_source": "declared",
+   "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+   "pages": 14,
+   "ocr_pages": 0,
+   "status": "ok",
+   "error": null,
+   "document_code": "НВС-2025.03-КЖ.СВГ",
+   "revision": "1",
+   "approval_status": null,
+   "discipline": "КР"
+  },
+  {
+   "file_pk": 3,
+   "file_id": "F0068",
+   "name": "АОСР №1АФ от 11.02.2026.pdf",
+   "rel_path": "",
+   "stage": "ID",
+   "stage_source": "declared",
+   "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+   "pages": 10,
+   "ocr_pages": 10,
+   "status": "ok",
+   "error": null,
+   "document_code": null,
+   "revision": null,
+   "approval_status": null,
+   "discipline": null
+  },
+  {
+   "file_pk": 4,
+   "file_id": "LOCAL-0badf11e",
+   "name": "broken.pdf",
+   "rel_path": "",
+   "stage": "ID",
+   "stage_source": "declared",
+   "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+   "pages": 0,
+   "ocr_pages": 0,
+   "status": "broken",
+   "error": "PDF повреждён: cannot open broken document",
+   "document_code": null,
+   "revision": null,
+   "approval_status": null,
+   "discipline": null
+  }
+ ],
+ "low_quality_pages": [
+  {
+   "file_id": "F0068",
+   "page": 7,
+   "reason": "плохой скан"
+  }
+ ]
+}

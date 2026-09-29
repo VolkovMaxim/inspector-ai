@@ -1,0 +1,16 @@
+# Секреты и данные стенда — никогда не в git
+.env
+.env.*
+!.env.example
+/models/
+/var/
+/var_scale/
+# Служебное
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+node_modules/
+/web/dist/
+*.log
